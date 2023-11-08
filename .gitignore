@@ -8,5 +8,5 @@
 # terraform variable files, sensitive data, etc.
 *.tfvars
 
-# ignore macOS ds_store
+# ignore macos ds_store
 *.DS_Store
