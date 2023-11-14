@@ -8,8 +8,8 @@ module "vpc" {
   name = "myapp-vpc"
   cidr = var.vpc_cidr_block
 
-  azs             = [var.avail_zone]
-  public_subnets  = [var.subnet_cidr_block]
+  azs                = [var.avail_zone]
+  public_subnets     = [var.subnet_cidr_block]
   public_subnet_tags = { Name = "${var.env_prefix}-subnet-1" }
 
   tags = {
