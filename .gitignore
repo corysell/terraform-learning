@@ -10,3 +10,6 @@
 
 # ignore macos ds_store
 *.DS_Store
+
+# ignore crash logs
+crash.log
