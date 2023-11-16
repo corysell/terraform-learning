@@ -1,14 +1,3 @@
-terraform {
-  required_version = ">= 0.12"
-  cloud {
-    hostname     = "app.terraform.io"
-    organization = "udemy-terraform-learning"
-    workspaces {
-      name = "udemy-terraform-learning"
-    }
-  }
-}
-
 provider "aws" {
   region = "us-east-2"
 }
