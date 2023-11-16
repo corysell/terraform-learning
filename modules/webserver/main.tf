@@ -48,7 +48,7 @@ data "aws_ami" "latest-amazon-linux-image" {
 
 resource "aws_key_pair" "ssh-key" {
   key_name   = "server-key"
-  public_key = file(var.public_key_location)
+  public_key = var.public_key
 }
 
 resource "aws_instance" "myapp-server" {

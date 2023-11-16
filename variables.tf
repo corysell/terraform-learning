@@ -26,11 +26,11 @@ variable "instance_type" {
   description = "EC2 instance type being specified for creation"
   type        = string
 }
-variable "public_key_location" {
-  description = "public rsa_id key location for SSH connectivity"
-  type        = string
-}
 variable "image_name" {
   description = "AMI image file for EC2 instance creation"
+  type        = string
+}
+variable "public_key" {
+  description = "public rsa_id key for SSH connectivity"
   type        = string
 }

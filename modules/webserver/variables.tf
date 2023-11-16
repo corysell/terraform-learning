@@ -23,11 +23,6 @@ variable "avail_zone" {
   type        = string
 }
 
-variable "public_key_location" {
-  description = "public rsa_id key location for SSH connectivity"
-  type        = string
-}
-
 variable "vpc_id" {
   description = "vpc id for myapp deployment"
   type        = string
@@ -40,5 +35,10 @@ variable "image_name" {
 
 variable "subnet_id" {
   description = "subnet id created for myapp deployment"
+  type        = string
+}
+
+variable "public_key" {
+  description = "public rsa_id key for SSH connectivity"
   type        = string
 }

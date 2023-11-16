@@ -1,3 +1,14 @@
+terraform {
+  required_version = ">= 0.12"
+  cloud {
+    hostname     = "app.terraform.io"
+    organization = "udemy-terraform-learning"
+    workspaces {
+      name = "udemy-terraform-learning"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-2"
 }
@@ -18,14 +29,14 @@ module "vpc" {
 }
 
 module "myapp-webserver" {
-  source              = "./modules/webserver"
-  instance_type       = var.instance_type
-  home_cidr           = var.home_cidr
-  any_cidr            = var.any_cidr
-  env_prefix          = var.env_prefix
-  avail_zone          = var.avail_zone
-  public_key_location = var.public_key_location
-  vpc_id              = module.vpc.vpc_id
-  subnet_id           = module.vpc.public_subnets[0]
-  image_name          = var.image_name
+  source        = "./modules/webserver"
+  instance_type = var.instance_type
+  home_cidr     = var.home_cidr
+  any_cidr      = var.any_cidr
+  env_prefix    = var.env_prefix
+  avail_zone    = var.avail_zone
+  public_key    = var.public_key
+  vpc_id        = module.vpc.vpc_id
+  subnet_id     = module.vpc.public_subnets[0]
+  image_name    = var.image_name
 }
