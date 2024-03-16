@@ -4,6 +4,7 @@ provider "aws" {
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
+  version = "5.1.2"
 
   name = "myapp-vpc"
   cidr = var.vpc_cidr_block
